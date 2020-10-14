@@ -11,7 +11,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+ProtectUs is a home security system based on the Raspberry Pi platform.
+By using facial recognition we are able to recognize a trusted person.
 
 ### Built with
 * [OpenCV](https://opencv.org/)
