@@ -1,4 +1,7 @@
+click==7.1.2
 Flask==1.1.2
-imutils=0.5.3
-numpy=1.19.2
-opencv-contrib-python=4.1.1.26
+gunicorn==20.0.4
+itsdangerous==1.1.0
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+Werkzeug==1.0.1
