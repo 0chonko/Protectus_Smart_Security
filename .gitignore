@@ -260,6 +260,7 @@ fabric.properties
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
+*.pyc
 
 # C extensions
 
