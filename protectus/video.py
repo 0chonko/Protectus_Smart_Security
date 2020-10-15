@@ -2,21 +2,24 @@ from flask import (
     Blueprint, render_template, Response
 )
 
+from protectus.auth import login_required
 import cv2
 
-video = cv2.VideoCapture(-1)
+# -1 takes default. To specify a specific video device take /dev/video* where * is the number.
+feed = cv2.VideoCapture(-1)
 
 bp = Blueprint('video', __name__)
 
 
-@bp.route('/')
-def index():
-    return render_template("index.html")
+@bp.route('/video')
+@login_required
+def video():
+    return render_template("video.html")
 
 
-def gen(video):
+def generate(feed):
     while True:
-        flag, image = video.read()
+        flag, image = feed.read()
         ret, jpeg = cv2.imencode('.jpg', image)
         frame = jpeg.tobytes()
         yield (b'--frame\r\n'
@@ -24,7 +27,8 @@ def gen(video):
 
 
 @bp.route('/video_feed')
+@login_required
 def video_feed():
-    global video
-    return Response(gen(video),
+    global feed
+    return Response(generate(feed),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
