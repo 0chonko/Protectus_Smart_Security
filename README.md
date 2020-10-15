@@ -46,6 +46,10 @@ Windows
 
 After starting the flask app you can find it under [127.0.0.1:5000](127.0.0.1:5000)
 
+To reinitialize the database
+
+    $ flask init-db
+
 ## License
 [To be determined]
 
