@@ -24,11 +24,6 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple lage that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World'
-
     # Initialize the database
     from . import db
     db.init_app(app)
@@ -36,5 +31,9 @@ def create_app(test_config=None):
     # Register the auth Blueprint (collection of views)
     from . import auth
     app.register_blueprint(auth.bp)
+
+    from . import video
+    app.register_blueprint(video.bp)
+    app.add_url_rule('/', endpoint='index')
 
     return app

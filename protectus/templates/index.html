@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Title</title>
-    </head>
-    <body>
-        <p>Hello World!</p>
-    </body>
-</html>
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Video Streaming{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <div>
+      <h1>Live Video Streaming</h1>
+      <img src="{{ url_for('video.video_feed') }}">
+  </div>
+{% endblock %}
