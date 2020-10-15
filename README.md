@@ -3,6 +3,9 @@
 
 * [About The Project](#about-the-project)
   * [Built with](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+* [Usage](#usage)
 * [License](#license)
 * [Authors](#authors)
 * [Acknowledgements](#acknowledgements)
