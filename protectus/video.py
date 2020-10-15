@@ -3,7 +3,6 @@ from flask import (
 )
 
 import cv2
-rumps
 
 video = cv2.VideoCapture(-1)
 
