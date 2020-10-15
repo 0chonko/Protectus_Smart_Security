@@ -31,7 +31,7 @@ You should have cloned the repository and your current working directory should 
 
 ### Prerequisites
 
-    $ pip3 install -r requirements.txt
+    $ python -m pip install -r requirements.txt
 
 ## Usage
 
@@ -40,13 +40,11 @@ To be able to run the Flask application locally you need to set the global varia
 Linux
 
     $ export FLASK_APP=protectus
-    $ export FLASK_ENV=development
     $ flask run
 
 Windows
 
     > set FLASK_APP=protectus
-    > set FLASK_ENV=development
     > flask run
 
 After starting the flask app you can find it under [127.0.0.1:5000](127.0.0.1:5000)
