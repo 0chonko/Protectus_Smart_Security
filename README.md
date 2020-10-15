@@ -31,7 +31,7 @@ You should have cloned the repository and your current working directory should 
 
 ### Prerequisites
 
-    $ pip install -r requirements.txt
+    $ pip3 install -r requirements.txt
 
 ## Usage
 
