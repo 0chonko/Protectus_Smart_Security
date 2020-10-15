@@ -16,7 +16,7 @@
 
 ProtectUs is a home security system based on the Raspberry Pi platform.
 By using facial recognition we are able to recognize a trusted person.
-The current built is heavily inspired by the [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/).
+The current built is heavily inspired by the [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/) and [this hackter.io article](https://www.hackster.io/ruchir1674/video-streaming-on-flask-server-using-rpi-ef3d75).
 
 ### Built with
 
