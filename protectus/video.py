@@ -6,7 +6,7 @@ from protectus.auth import login_required
 import cv2
 
 # -1 takes default. To specify a specific video device take /dev/video* where * is the number.
-feed = cv2.VideoCapture(-1)
+feed = cv2.VideoCapture(4)
 
 bp = Blueprint('video', __name__)
 
