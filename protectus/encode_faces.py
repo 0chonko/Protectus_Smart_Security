@@ -1,4 +1,4 @@
-# Requires images to be saved in folder called "dataset"
+# Requires images to be saved in folder called "trusted_faces"
 # Creates a file called "encodings.pickle"
 
 # import the necessary packages
@@ -8,9 +8,9 @@ import pickle
 import cv2
 import os
 
-# grab the paths to the input images in our dataset
+# grab the paths to the input images in our trusted_faces
 print("[INFO] quantifying faces...")
-imagePaths = list(paths.list_images("dataset"))
+imagePaths = list(paths.list_images("trusted_faces"))
 
 # initialize the list of known encodings and known names
 knownEncodings = []

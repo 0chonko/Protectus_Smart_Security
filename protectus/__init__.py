@@ -1,7 +1,7 @@
 # factory file
 import os
-
-from flask import Flask, render_template
+from threading import Thread
+from flask import Flask
 
 
 def create_app(test_config=None):
@@ -39,4 +39,6 @@ def create_app(test_config=None):
     app.register_blueprint(dashboard.bp)
     app.add_url_rule('/', endpoint='index')
 
+    # Start a separate thread
+    thread = Thread(target=video.start_feed).start()
     return app
