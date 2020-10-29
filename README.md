@@ -16,7 +16,7 @@
 
 ProtectUs is a home security system based on the Raspberry Pi platform.
 By using facial recognition we are able to recognize a trusted person.
-The current built is heavily inspired by the [Flask Tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/) and [this hackter.io article](https://www.hackster.io/ruchir1674/video-streaming-on-flask-server-using-rpi-ef3d75).
+By using bluetooth we are able to disable the system when the user leaves the house.
 
 ### Built with
 
@@ -59,7 +59,7 @@ By default the server is only accessible on the system you run the app on. If yo
 
 To run the WSGI server and enable threading, start the application with Gunicorn. (Make sure the database has been initiliazed)
 
-    $ gunicorn "protectus:create_app()"
+    $ gunicorn --threads=2 "protectus:create_app()"
 
 
 ## License
@@ -73,6 +73,7 @@ To run the WSGI server and enable threading, start the application with Gunicorn
 * Zhongyu Shi
 
 ## Acknowledgements
+A big thanks has to go out to Adrian Rosebrock and his [pyimagesearch](https://www.pyimagesearch.com/) project. Not only did he provide code that enabled us to easily implement the artificial intelligence features we needed but also wrote articles dedicated to applying it on a Raspberry Pi.
 
 ### Tools
 
