@@ -59,7 +59,7 @@ By default the server is only accessible on the system you run the app on. If yo
 
 To run the WSGI server and enable threading, start the application with Gunicorn. (Make sure the database has been initiliazed)
 
-    $ gunicorn "protectus:create_app()"
+    $ gunicorn --threads=2 "protectus:create_app()"
 
 
 ## License
