@@ -27,7 +27,7 @@ By using bluetooth we are able to disable the system when the user leaves the ho
 ## Getting Started
 
 We assume you have a Python 3 and corresponding pip package manager installed.
-You should have cloned the repository and your current working directory should be the folder to where you cloned the repo to.
+You should have cloned the repository and your current working directory should be the folder to where you cloned the repo to. It is advised to enable a virtual environment before installing packages to isolate them from possible other versions of the same packages.
 
 ### Prerequisites
 
