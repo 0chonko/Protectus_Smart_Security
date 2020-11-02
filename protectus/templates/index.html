@@ -1,94 +1,45 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}Dashboard{% endblock %}</h1>
-    <!-- Switch Toggle -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-    }
+<h1 class="text-center">{% block title %}Dashboard{% endblock %}</h1>
+<!-- Switch Toggle -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+    var switchStatus = false;
+    $("#togBtn").on('change', function() {
+        if ($(this).is(':checked')) {
+            switchStatus = $(this).is(':checked');
+            alert(switchStatus); // To verify
+        } else {
+            switchStatus = $(this).is(':checked');
+            alert(switchStatus); // To verify
+        }
+    });
 
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      -webkit-transition: .4s;
-      transition: .4s;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      -webkit-transition: .4s;
-      transition: .4s;
-    }
-
-    input:checked + .slider {
-      background-color: #2196F3;
-    }
-
-    input:focus + .slider {
-      box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked + .slider:before {
-      -webkit-transform: translateX(26px);
-      -ms-transform: translateX(26px);
-      transform: translateX(26px);
-    }
-
-    /* Rounded sliders */
-    .slider.round {
-      border-radius: 34px;
-    }
-
-    .slider.round:before {
-      border-radius: 50%;
-    }
-    </style>
-{#    <script>#}
-{#        var switchStatus = false;#}
-{#    $("#togBtn").on('change', function() {#}
-{#        if ($(this).is(':checked')) {#}
-{#            switchStatus = $(this).is(':checked');#}
-{#            alert(switchStatus);// To verify#}
-{#        }#}
-{#        else {#}
-{#           switchStatus = $(this).is(':checked');#}
-{#           alert(switchStatus);// To verify#}
-{#        }#}
-{##}
-{##}
-{#    });#}
-{#    </script>#}
+</script>
 {% endblock %}
 
 {% block content %}
-    <!-- Rounded switch -->
-<label class="switch" id="togBtn">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>
-    <div>
-        <a href="{{ url_for('video.video') }}">Video Feed</a>
+<!-- Rounded switch -->
+<div class="text-center">
+    <label class="switch" id="togBtn">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-10 col-lg-8">
+            <h2 class="text-center">Live Video Streaming</h2>
+            <div class="text-center">
+                <img class="img-fluid invert-img" src="{{ url_for('video.video_feed') }}">
+            </div>
+        </div>
     </div>
+</div>
+
+<h2 class="text-center">Actions</h2>
+
+
+
 {% endblock %}
