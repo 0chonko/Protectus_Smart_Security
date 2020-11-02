@@ -33,9 +33,15 @@ You should have cloned the repository and your current working directory should 
 
     $ python -m pip install -r requirements.txt
 
+There are known issues surrounding dependencies on the Raspberry Pi. When executing on the Pi it is recommended to install the missing packages through apt.
+
+    # apt-get install libatlas-base-dev libopenjp2-7 libilmbase-dev libopenexr-dev \ 
+    libgstreamer1.0-dev ffmpeg libgtk-3-dev
+
+
 ## Usage
 
-To be able to run the Flask application locally you need to set the global variables `FLASK_APP` and `FLASK_ENV`.
+To be able to run the Flask application locally you need to set the global variable `FLASK_APP`.
 
 Linux
 
