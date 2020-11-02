@@ -24,7 +24,7 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # Initialize the database
+    # Reigster init-db command
     from . import db
     db.init_app(app)
 
