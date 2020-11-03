@@ -1,5 +1,6 @@
 import time
 # Import the ADS1x15 module.
+import time
 import Adafruit_ADS1x15
 
 # Create an ADS1115 ADC (16-bit) instance.
@@ -97,4 +98,36 @@ class getSensorData(object):
             print('extra measurement on sensor two: ' + str(value))
         return value
 
+def main():
+    GAIN = 1
+    dataRate = 250
 
+    sensorData = getSensorData(val=0)
+
+    while True:
+        # sensorData.read_gas_sensor_one(GAIN,dataRate)
+        # time.sleep(0.05)
+
+        # sensorData.read_gas_sensor_two(GAIN,dataRate)
+        # time.sleep(0.05)
+        #
+        sensorData.read_motion_sensor_one(GAIN, dataRate, 0)
+        time.sleep(0.05)
+        #
+        # sensorData.read_motion_sensor_two(GAIN, dataRate)
+        # time.sleep(0.05)
+        #
+        # sensorData.read_microphone_sensor_one(2/3, dataRate)
+        # time.sleep(0.05)
+        #
+        # sensorData.read_microphone_sensor_two(GAIN, dataRate)
+        # time.sleep(0.05)
+        #
+        # sensorData.read_sensor_bell(GAIN, dataRate)
+        # time.sleep(0.05)
+        #
+        # sensorData.read_sensor_8(GAIN, dataRate)
+        # time.sleep(0.05)
+
+if __name__ == "__main__":
+    main()
