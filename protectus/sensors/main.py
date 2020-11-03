@@ -16,14 +16,14 @@ while True:
     # sensorData.read_gas_sensor_two(GAIN,dataRate)
     # time.sleep(0.05)
     #
-    # sensorData.read_motion_sensor_one(GAIN, dataRate)
-    # time.sleep(0.05)
+    sensorData.read_motion_sensor_one(GAIN, dataRate)
+    time.sleep(0.05)
     #
     # sensorData.read_motion_sensor_two(GAIN, dataRate)
     # time.sleep(0.05)
     #
-    sensorData.read_microphone_sensor_one(2/3, dataRate)
-    time.sleep(0.05)
+    # sensorData.read_microphone_sensor_one(2/3, dataRate)
+    # time.sleep(0.05)
     #
     # sensorData.read_microphone_sensor_two(GAIN, dataRate)
     # time.sleep(0.05)

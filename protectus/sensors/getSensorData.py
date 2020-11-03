@@ -24,54 +24,77 @@ class getSensorData(object):
 
     #the following function get as input the gain value with wich the sensor data will be amplified, and the rate of trasmission
     #of the data.
-    def read_gas_sensor_one(self, gain, dataRate):
+
+    #cout is there for debugging purposes, if 1 the value is printed
+
+    def read_gas_sensor_one(self, gain, dataRate, cout):
         value = adc2.read_adc(0,gain=gain) / 10000
-        print('gas measurement on sensor one: ' + str(value))
+        if (cout == 1):
+            print('gas measurement on sensor one: ' + str(value))
         #allert trigger
         if value > 0.5:
             print ('alert gas sensor one')
         return value
 
-    def read_gas_sensor_two(self, gain, dataRate):
+    def read_gas_sensor_two(self, gain, dataRate, cout):
         value = adc2.read_adc(1, gain=gain) * 3.7 / 10000
-        print('gas measurement on sensor two: ' + str(value))
+        if (cout == 1):
+            print('gas measurement on sensor two: ' + str(value))
         # allert trigger
         if value > 0.6:
             print('alert gas sensor two')
+        return value
 
-    def read_motion_sensor_one(self, gain, dataRate):
+    def read_motion_sensor_one(self, gain, dataRate, cout):
         value = adc2.read_adc(2, gain=gain)
-        print('motion measurement on sensor one: ' + str(value))
+        if (cout == 1):
+            print('motion measurement on sensor one: ' + str(value))
         # allert trigger
-        if value == 0:
+        if value > 1000:
+            value = 1
             print ("motion detected on sensor one")
+        else:
+            value = 0
+        return value
 
-
-    def read_motion_sensor_two(self, gain, dataRate):
+    def read_motion_sensor_two(self, gain, dataRate, cout):
         value = adc2.read_adc(3, gain=gain)
-        print('motion measurement on sensor two: ' + str(value))
+        if (cout == 1):
+            print('motion measurement on sensor two: ' + str(value))
         # allert trigger
-        if value == 0:
+        if value > 100:
+            value = 1
             print ("motion detected on sensor two")
+        else:
+            value = 0
+        return value
 
-    def read_microphone_sensor_one(self, gain, dataRate):
+    def read_microphone_sensor_one(self, gain, dataRate, cout):
         value = adc.read_adc(0, gain=gain)
-        print('sound measurement on sensor one: ' + str(value))
+        if (cout == 1):
+            print('sound measurement on sensor one: ' + str(value))
+        return value
 
-    def read_microphone_sensor_two(self, gain, dataRate):
+    def read_microphone_sensor_two(self, gain, dataRate, cout):
         value = adc.read_adc(1, gain=gain)
-        print('sound measurement on sensor two: ' + str(value))
+        if (cout == 1):
+            print('sound measurement on sensor two: ' + str(value))
+        return value
 
-    def read_sensor_bell(self, gain, dataRate):
+    def read_sensor_bell(self, gain, dataRate, cout):
         value = adc.read_adc(2, gain=gain)
-        print('extra measurement on sensor one: ' + str(value))
+        if (cout == 1):
+            print('measurement on bell sensor: ' + str(value))
         # allert trigger
         if value < 500:
+            value = 0
             print("someone is at the door")
+        return value
 
-    def read_sensor_8(self, gain, dataRate):
+    def read_sensor_8(self, gain, dataRate, cout):
         value = adc.read_adc(3, gain=gain)
-        print('extra measurement on sensor two: ' + str(value))
-
+        if (cout == 1):
+            print('extra measurement on sensor two: ' + str(value))
+        return value
 
 
