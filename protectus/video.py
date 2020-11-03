@@ -1,3 +1,7 @@
+"""
+Code has been taken from the pyimagesearch project by Adrian Rosebrock.
+"""
+
 from flask import (
     Blueprint, render_template, Response
 )

@@ -13,4 +13,3 @@ numpy==1.19.2
 opencv-python==4.4.0.44
 Pillow==8.0.1
 Werkzeug==1.0.1
-Adafruit-ADS1x15==1.0.2
