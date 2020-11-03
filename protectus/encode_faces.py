@@ -1,3 +1,8 @@
+"""
+Code has been taken from the pyimagesearch project by Adrian Rosebrock.
+"""
+
+
 # Requires images to be saved in folder called "trusted_faces"
 # Creates a file called "encodings.pickle"
 
